@@ -1,0 +1,13 @@
+{% extends 'base1.html' %}
+
+{% block title %} ORDERS {{ name.name }} {% endblock %}
+
+{% block content %}
+
+<p>
+    {% for order in data_ord %}
+    {{ order.goods.name_goods }} <br>
+    {% endfor %}
+</p>
+
+{% endblock %}

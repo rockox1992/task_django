@@ -1,0 +1,17 @@
+{% extends 'base1.html' %}
+
+{% block title %} ORDERS {{ name.name }} {% endblock %}
+
+{% block content %}
+<h1>{{ name.name }}</h1>
+
+
+{% regroup client_orders by num_orders as list %}
+    {% for num_orders in list %}
+
+        <tr>
+            <td><a href="{% url 'basket'  num_orders.grouper %}">{{num_orders.grouper}}</a><br>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}

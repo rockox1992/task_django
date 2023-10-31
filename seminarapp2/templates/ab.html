@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ article.description }}<br>
+    {{ article.count_views }}<br>
+    {% if comments %}
+        {% for comment in comments %}
+            {{ comment.description }}<br>
+            {% if comment.create_at != comment.change_at %}
+              <p>изменено</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

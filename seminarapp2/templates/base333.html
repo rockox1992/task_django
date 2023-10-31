@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eagle</title>
+</head>
+<body>
+{% for article in articles %}
+<!--<p> {{ article.title }} {{ article.description }} </p>-->
+{% if article.is_published %}
+<a href="{% url 'ab' article.id %}"> article.title </a>
+{% else %}
+{{ article.title }}
+{% endif %}
+{% endfor %}
+</body>
+</html>
